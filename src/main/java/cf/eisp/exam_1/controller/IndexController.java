@@ -13,7 +13,7 @@ public class IndexController {
     TestRepository testRepository;
     @GetMapping("/")
     public String index(Model model) {
-        int randomInt = (int) (Math.random() * 4) + 1;
+        int randomInt = (int) (Math.random() * 16) + 17;
         ExamPaper examPaper = testRepository.findByRandomInt(randomInt);
         model.addAttribute("examPaper", examPaper);
         return "main";
