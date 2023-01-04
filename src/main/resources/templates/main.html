@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <p th:text="${examPaper.ExamPaperQuestion}"></p>
+  <input type="hidden" th:value="${examPaper.ExamPaperAnswer}" id="answer">
+  <div>
+    <input type="radio" value="1" name="answer" id="answer-1" checked>
+    <label for="answer-1" th:text="${examPaper.ExamPaperExample1}">1</label>
+  </div>
+  <div>
+    <input type="radio" value="2" name="answer" id="answer-2">
+    <label for="answer-2" th:text="${examPaper.ExamPaperExample2}">2</label>
+  </div>
+  <div>
+    <input type="radio" value="3" name="answer" id="answer-3">
+    <label for="answer-3" th:text="${examPaper.ExamPaperExample3}">3</label>
+  </div>
+  <div>
+    <input type="radio" value="4" name="answer" id="answer-4">
+    <label for="answer-4" th:text="${examPaper.ExamPaperExample4}">4</label>
+  </div>
+  <button onclick="제출()" id="answer-btn">제출</button>
+  <div id="answer-result"></div>
+</div>
+<script>
+  let nextBtn = document.createElement("button");
+  nextBtn.innerText = "다음";
+  let answer11 = document.getElementById("answer").value;
+
+  function 제출() {
+    let answer = document.querySelector('input[name="answer"]:checked').value;
+    let answerResult = document.getElementById("answer-result");
+    if(answer == answer11) {
+      answerResult.innerText = "정답";
+      answerResult.appendChild(nextBtn);
+    } else {
+      answerResult.innerText = `오답 정답은 ${answer11} 입니다.`;
+      answerResult.appendChild(nextBtn);
+    }
+    let answerBtn = document.getElementById("answer-btn");
+    answerBtn.remove();
+  }
+
+  nextBtn.addEventListener("click", function () {
+    window.location.reload()
+  });
+</script>
+</body>
+</html>
