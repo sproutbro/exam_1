@@ -4,13 +4,11 @@ import lombok.Data;
 
 @Data
 public class ExamPaper {
-    private Integer ExamCategoryDetailId;
-    private Integer ExamPaperId;
-    private String ExamPaperQuestion;
-    private String ExamPaperExample1;
-    private String ExamPaperExample2;
-    private String ExamPaperExample3;
-    private String ExamPaperExample4;
-    private String ExamPaperExample5;
-    private Integer ExamPaperAnswer;
+    private Integer examCategoryDetailId;
+    private Integer examPaperId;
+    private String examPaperQuestion;
+    private String examPaperExample1;
+    private String examPaperExample2;
+    private String examPaperExample3;
+    private String examPaperExample4;
 }
