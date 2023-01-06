@@ -2,7 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div>
     <h1>Paper</h1>
-    <div id="paper"></div>
+    <div id="paper">
+    </div>
     <button onclick="question(startNumber)" id="question-btn">순서대로 풀기</button>
     <button onclick="randomQuestion()" id="random-question-btn">랜덤문제 풀기</button>
 </div>
@@ -40,7 +41,13 @@ function question(startNumber) {
     $("#question-btn").remove()
     $("#random-question-btn").remove()
 
-    $("<p>").text(paper[startNumber].examPaperQuestion).appendTo("#paper")
+    let str = paper[startNumber].examPaperQuestion;
+    let substring = str.substring(str.length -3, str.length);
+    if(substring == "jpg") {
+        $("<img>").attr({src: "/img/" + paper[startNumber].examPaperQuestion, width: "100%"}).appendTo("#paper")
+    } else {
+        $("<p>").text(paper[startNumber].examPaperQuestion).appendTo("#paper")
+    }
 
     ask = paper[startNumber].examPaperExample1;
     sample.push(paper[startNumber].examPaperExample1);
