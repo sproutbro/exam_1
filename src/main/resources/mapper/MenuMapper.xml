@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cf.eisp.exam_1.repository.MenuRepository">
+  <select id="findAll" resultType="ExamCategoryDetail">
+    select exam_category_detail_id, exam_category_detail_name from exam_category_detail
+  </select>
+</mapper>

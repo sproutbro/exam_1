@@ -6,4 +6,15 @@
   <select id="findById" resultType="ExamPaper" parameterType="Integer">
     select * from exam_paper where exam_category_detail_id = #{paperId}
   </select>
+  <select id="findByExamCategoryDetailId" resultType="ExamPaper" parameterType="Integer">
+    select
+      exam_paper_id,
+      exam_paper_question,
+      exam_paper_example_1,
+      exam_paper_example_2,
+      exam_paper_example_3,
+      exam_paper_example_4
+    from exam_paper
+    where exam_category_detail_id = #{examCategoryDetailId}
+  </select>
 </mapper>

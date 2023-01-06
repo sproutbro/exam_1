@@ -8,4 +8,6 @@ import java.util.List;
 @Mapper
 public interface PaperRepository {
     List<ExamPaper> findById(Integer paperId);
+
+    List<ExamPaper> findByExamCategoryDetailId(Integer examCategoryDetailId);
 }

@@ -4,7 +4,9 @@
     <li class="nav-item">
         <a class="nav-link" href="/">Main</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="/exam1">정보처리기능사20111009</a>
-    </li>
+    <c:forEach var="menu" items="${menus}">
+        <li class="nav-item">
+            <a class="nav-link" href="/exam2/${menu.examCategoryDetailId}">${menu.examCategoryDetailName}</a>
+        </li>
+    </c:forEach>
 </ul>
