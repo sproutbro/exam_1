@@ -46,7 +46,7 @@ function question(startNumber) {
     if(substring == "jpg") {
         $("<img>").attr({src: "/img/" + paper[startNumber].examPaperQuestion, width: "100%"}).appendTo("#paper")
     } else {
-        $("<p>").text(paper[startNumber].examPaperQuestion).appendTo("#paper")
+        $("<p>").html(paper[startNumber].examPaperQuestion).appendTo("#paper")
     }
 
     ask = paper[startNumber].examPaperExample1;
